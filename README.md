@@ -14,4 +14,12 @@
 
      }  // end of loop
      
+another
+
+         if(micros()-StepperTime > StepInterval)
+      {
+      ToolJustChanged=HandleGrayCode();  //Check before we step. Last step may have been the one that changed tools.
+      ExecuteStep();  
+      StepperTime=micros();  
+      }
 https://forum.arduino.cc/t/replacing-delay-between-steps/973689/17     
